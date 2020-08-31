@@ -9,18 +9,21 @@ namespace Sweepstakes
     public class Sweepstakes
     {
         public string Name;
-        Dictionary<int,Contestant> contestants;
+        public Dictionary<int,Contestant> contestants;
+        int mostRecentKey;
+        
 
         public Sweepstakes(string name)
         {
             this.Name = name;
             contestants = new Dictionary<int, Contestant>();
-
+            mostRecentKey = 0;
         }
 
         public void RegisterContestant(Contestant contestant)
         {
-
+            int newKey = GenerateKey();
+            contestants.Add(newKey, contestant);
         }
 
         public Contestant PickWinner()
@@ -35,6 +38,15 @@ namespace Sweepstakes
         {
 
         } 
+
+        private int GenerateKey()
+        {
+            int newKey;
+            mostRecentKey++;
+            newKey = mostRecentKey;
+
+            return newKey;
+        }
 
     }
 }
