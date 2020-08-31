@@ -36,16 +36,16 @@ namespace Sweepstakes
 
         public void PrintContestantInfo(Contestant contestant)
         {
-
+            Console.WriteLine($"This contestant's name is {contestant.FirstName} {contestant.LastName}.\n");
+            Console.WriteLine($"This contestant's email address is {contestant.EmailAddress}.\n");
+            Console.WriteLine($"This contestant's registration number is {contestant.RegistrationNumber}.\n");
         } 
 
         private int GenerateKey()
-        {
-            int newKey;
+        {            
             mostRecentKey++;
-            newKey = mostRecentKey;
 
-            return newKey;
+            return mostRecentKey;
         }
 
     }
