@@ -9,6 +9,7 @@ namespace Sweepstakes
     public class Sweepstakes
     {
         public string Name;
+        private string _name; // where does this come into play?
         public Dictionary<int,Contestant> contestants;
         int mostRecentKey;
         
