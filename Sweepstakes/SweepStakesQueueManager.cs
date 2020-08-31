@@ -16,7 +16,7 @@ namespace Sweepstakes
 
         public Sweepstakes GetSweepstakes()
         {
-            Sweepstakes sweepstake = new Sweepstakes();
+            Sweepstakes sweepstake = new Sweepstakes("Default");
 
             return sweepstake;
 

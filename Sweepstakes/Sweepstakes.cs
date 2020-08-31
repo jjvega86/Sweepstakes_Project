@@ -23,12 +23,16 @@ namespace Sweepstakes
         public void RegisterContestant(Contestant contestant)
         {
             int newKey = GenerateKey();
+            contestant.GetContestantInformation();
             contestants.Add(newKey, contestant);
         }
 
         public Contestant PickWinner()
         {
             Contestant winner = new Contestant();
+            Random random = new Random();
+
+            contestants[random.Next(mostRecentKey)] = winner;
 
             return winner;
 
