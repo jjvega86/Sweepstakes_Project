@@ -33,12 +33,10 @@ namespace Sweepstakes
         }
 
         public static int AssignRegistrationNumber()
-        {
-            int registrationNumber = 0;
-            Random random = new Random();
-            registrationNumber = random.Next(0, 10000);
+        { // could create a method to validate new random number to ensure no duplicates
 
-            return registrationNumber;
+            Random random = new Random();
+            return random.Next(0, 10000);           
         }
     }
 }
