@@ -32,7 +32,7 @@ namespace Sweepstakes
             Contestant winner = new Contestant();
             Random random = new Random();
 
-            contestants[random.Next(mostRecentKey)] = winner;
+            winner = contestants[random.Next(mostRecentKey-1)];
 
             return winner;
 
