@@ -12,6 +12,7 @@ namespace Sweepstakes
         public string LastName;
         public string EmailAddress;
         public int RegistrationNumber;
+        public bool WonSweepstake;
 
         public Contestant()
         {
@@ -19,9 +20,12 @@ namespace Sweepstakes
             LastName = "Default";
             EmailAddress = "johndoe@noname.com";
             RegistrationNumber = 0;
+            WonSweepstake = false;
             
         }
 
+
         
+
     }
 }

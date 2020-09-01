@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    interface ISubscriber
+    public interface IAnnounce
     {
-        void NotifyWinner();
-        void NotifyNonWinners();
+        void Notify();
     }
 }

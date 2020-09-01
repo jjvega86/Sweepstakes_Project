@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    public class Sweepstakes : ISubscriber
+    public class Sweepstakes
     {
         
-        public string Name { get { return _name; } }
         private string _name;
+        public string Name { get { return _name; } }
+
         public Dictionary<int,Contestant> contestants;
         private int _mostRecentKey;
         
@@ -28,8 +29,8 @@ namespace Sweepstakes
             contestant.LastName = UserInterface.GetUserInputFor("Please enter your last name!");
             contestant.EmailAddress = UserInterface.GetUserInputFor("Please enter your email address!");
             contestant.RegistrationNumber = UserInterface.AssignRegistrationNumber();
-            int newKey = GenerateKey();
-            contestants.Add(newKey, contestant);
+            contestants.Add(_mostRecentKey, contestant);
+            _mostRecentKey++;
         }
 
         public Contestant PickWinner()
@@ -38,7 +39,7 @@ namespace Sweepstakes
             Random random = new Random();
 
             winner = contestants[random.Next(_mostRecentKey-1)];
-
+   
             return winner;
 
         }
@@ -50,20 +51,5 @@ namespace Sweepstakes
             Console.WriteLine($"This contestant's registration number is {contestant.RegistrationNumber}.\n");
         } 
 
-        private int GenerateKey()
-        {            
-            _mostRecentKey++;
-            return _mostRecentKey;
-        }
-
-        public void NotifyWinner()
-        {
-
-        }
-
-        public void NotifyNonWinners()
-        {
-
-        }
     }
 }
