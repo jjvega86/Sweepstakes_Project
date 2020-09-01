@@ -10,8 +10,7 @@ namespace Sweepstakes
     {
         private ISweepStakesManager _manager;
         public MarketingFirm(ISweepStakesManager manager)
-        {
-            SelectSweepStakeManager(manager);
+        { 
             _manager = manager;
         }
 
@@ -21,28 +20,6 @@ namespace Sweepstakes
             _manager.InsertSweepstakes(sweepstakes);           
         }
 
-        private ISweepStakesManager SelectSweepStakeManager(ISweepStakesManager manager)
-        {
-            string input = UserInterface.GetUserInputFor("What type of manager would you like to use for your sweepstakes? Stack or Queue");
-            switch (input)
-            {
-                case "Stack":
-                    manager = new SweepStakesStackManager();
-                    break;
-
-                case "Queue":
-                    manager = new SweepStakesQueueManager();
-                    break;
-
-                default:
-                    Console.WriteLine("Not a valid selection!");
-                    SelectSweepStakeManager(manager);
-                    break;
-
-            }
-
-            return manager;
-
-        }
+       
     }
 }
