@@ -11,16 +11,13 @@ namespace Sweepstakes
         private Stack<Sweepstakes> stack;
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
+            stack.Push(sweepstakes);
 
         }
 
-
         public Sweepstakes GetSweepstakes()
         {
-            Sweepstakes sweepstake = new Sweepstakes("Default");
-
-            return sweepstake;
-
+            return stack.Pop();
         }
     }
 }

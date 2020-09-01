@@ -8,17 +8,18 @@ namespace Sweepstakes
 {
     public class Sweepstakes
     {
-        public string Name;
-        private string _name; // where does this come into play?
+        
+        public string Name { get { return _name; } }
+        private string _name;
         public Dictionary<int,Contestant> contestants;
-        int mostRecentKey;
+        private int _mostRecentKey;
         
 
         public Sweepstakes(string name)
         {
-            this.Name = name;
+            _name = name;
             contestants = new Dictionary<int, Contestant>();
-            mostRecentKey = 0;
+            _mostRecentKey = 0;
         }
 
         public void RegisterContestant(Contestant contestant)
@@ -33,10 +34,10 @@ namespace Sweepstakes
 
         public Contestant PickWinner()
         {
-            Contestant winner = new Contestant();
+            Contestant winner;
             Random random = new Random();
 
-            winner = contestants[random.Next(mostRecentKey-1)];
+            winner = contestants[random.Next(_mostRecentKey-1)];
 
             return winner;
 
@@ -51,9 +52,8 @@ namespace Sweepstakes
 
         private int GenerateKey()
         {            
-            mostRecentKey++;
-
-            return mostRecentKey;
+            _mostRecentKey++;
+            return _mostRecentKey;
         }
 
     }
