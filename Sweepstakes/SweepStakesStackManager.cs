@@ -8,16 +8,16 @@ namespace Sweepstakes
 {
     class SweepStakesStackManager : ISweepStakesManager
     {
-        private Stack<Sweepstakes> stack;
+        private Stack<Sweepstakes> _stack;
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            stack.Push(sweepstakes);
+            _stack.Push(sweepstakes);
 
         }
 
         public Sweepstakes GetSweepstakes()
         {
-            return stack.Pop();
+            return _stack.Pop();
         }
     }
 }

@@ -8,18 +8,16 @@ namespace Sweepstakes
 {
     class SweepStakesQueueManager : ISweepStakesManager
     {
-        private Queue<Sweepstakes> queue;
+        private Queue<Sweepstakes> _queue;
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-
+            _queue.Enqueue(sweepstakes);
         }
 
 
         public Sweepstakes GetSweepstakes()
         {
-            Sweepstakes sweepstake = new Sweepstakes("Default");
-
-            return sweepstake;
+            return _queue.Dequeue();
 
         }
     }
