@@ -21,7 +21,7 @@ namespace Sweepstakes
             //sweepstakes.PrintContestantInfo(winner);
 
             Simulation simulation = new Simulation();
-            simulation.CreatMarketingFirmWithManager();
+            simulation.CreateMarketingFirmWithManager();
 
             Console.ReadLine();
 

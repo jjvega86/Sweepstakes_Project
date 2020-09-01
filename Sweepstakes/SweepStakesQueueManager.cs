@@ -9,6 +9,10 @@ namespace Sweepstakes
     class SweepStakesQueueManager : ISweepStakesManager
     {
         private Queue<Sweepstakes> _queue;
+        public SweepStakesQueueManager()
+        {
+            _queue = new Queue<Sweepstakes>();
+        }
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
             _queue.Enqueue(sweepstakes);
