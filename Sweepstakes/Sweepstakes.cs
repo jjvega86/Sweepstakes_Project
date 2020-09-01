@@ -47,7 +47,7 @@ namespace Sweepstakes
 
         }
 
-        public void Notify()
+        private void Notify()
         {
             for (int i = 0; i < contestants.Count; i++)
             {
