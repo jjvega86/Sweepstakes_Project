@@ -12,8 +12,9 @@ namespace Sweepstakes
         private string _name;
         public string Name { get { return _name; } }
 
-        public Dictionary<int,Contestant> contestants;
+        public Dictionary<int, Contestant> contestants;
         private int _mostRecentKey;
+        private int _winningKey;
         
 
         public Sweepstakes(string name)
@@ -21,6 +22,7 @@ namespace Sweepstakes
             _name = name;
             contestants = new Dictionary<int, Contestant>();
             _mostRecentKey = 0;
+            _winningKey = 0;
         }
 
         public void RegisterContestant(Contestant contestant)
@@ -37,10 +39,28 @@ namespace Sweepstakes
         {
             Contestant winner;
             Random random = new Random();
-
-            winner = contestants[random.Next(_mostRecentKey-1)];
+            _winningKey = random.Next(_mostRecentKey - 1);
+            winner = contestants[_winningKey];
+            Notify();
    
             return winner;
+
+        }
+
+        public void Notify()
+        {
+            for (int i = 0; i < contestants.Count; i++)
+            {
+                if (i == _winningKey)
+                {
+                    Console.WriteLine($"{contestants[i].FirstName}, you won!");
+                }
+                else
+                {
+                    Console.WriteLine($"{contestants[i].FirstName}, {contestants[_winningKey].FirstName}{contestants[_winningKey].LastName} won! Thanks for entering.");
+                }
+
+            }
 
         }
 
@@ -50,6 +70,8 @@ namespace Sweepstakes
             Console.WriteLine($"This contestant's email address is {contestant.EmailAddress}.\n");
             Console.WriteLine($"This contestant's registration number is {contestant.RegistrationNumber}.\n");
         } 
+
+      
 
     }
 }
