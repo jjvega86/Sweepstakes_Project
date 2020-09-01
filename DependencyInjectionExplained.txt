@@ -1,0 +1,7 @@
+As a developer, I am using dependency injection in my application in order to lower coupling and create higher flexibility in the usage of my classes.
+
+In Sweepstakes, I use dependency injection using the ISweepStakesManager interface. By allowing my SweepStakesManager classes (each using Stack and Queue data structures) to inherit this interface, I can now pass the ISweepStakesManager interface as a data type in the constructor of my MarketingFirm class when I'm instantiating an instance of it. 
+
+This allows me to take in user input on the Simulation class level and determine which data structure to use to handle sweepstake management when I'm creating a MarketingFirm object without the constructor being dependent on one or the other SweepStakeManager classes. Instead, I can use a factory pattern in one of my Simulation methods to take the user input, instantiate the appropriate manager, and return that data type into the parameter of a MarketingFirm object instantiation. 
+
+If I wanted to add additional ways of handling sweepstakes data on the backend, I could now add new classes that inherit the ISweepStakeManager interface and simply add new cases to the factory design method that takes user input, and those new data structures would be more easily implemented without having to change much code in the application.
