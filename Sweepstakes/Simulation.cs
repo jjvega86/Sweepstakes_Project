@@ -8,12 +8,12 @@ namespace Sweepstakes
 {
     class Simulation
     {
+        public MarketingFirm marketingFirm;
+       
         public void CreateMarketingFirmWithManager()
         {
             string input = UserInterface.GetUserInputFor("What type of manager would you like to use for your sweepstakes? Stack or Queue");
-            MarketingFirm marketingFirm = new MarketingFirm(SelectManagerType(input));
-            marketingFirm.CreateSweepStake();
-     
+            marketingFirm = new MarketingFirm(SelectManagerType(input));
         }
 
         private ISweepStakesManager SelectManagerType(string input)

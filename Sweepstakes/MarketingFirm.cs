@@ -9,6 +9,7 @@ namespace Sweepstakes
     class MarketingFirm
     {
         private ISweepStakesManager _manager;
+        public ISweepStakesManager Manager { get { return _manager; } }
         public MarketingFirm(ISweepStakesManager manager)
         { 
             _manager = manager;
@@ -19,6 +20,8 @@ namespace Sweepstakes
             Sweepstakes sweepstakes = new Sweepstakes(UserInterface.GetUserInputFor("Please enter the name of your sweepstakes!"));
             _manager.InsertSweepstakes(sweepstakes);           
         }
+
+        
 
        
     }

@@ -17,8 +17,7 @@ namespace Sweepstakes
         }
 
         public static int AssignRegistrationNumber()
-        { // could create a method to validate new random number to ensure no duplicates
-
+        {
             Random random = new Random();
             return random.Next(0, 10000);           
         }

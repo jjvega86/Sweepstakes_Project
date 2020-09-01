@@ -10,16 +10,6 @@ namespace Sweepstakes
     {
         static void Main(string[] args)
         {
-
-            //Sweepstakes sweepstakes = new Sweepstakes("Big Winner");
-            //sweepstakes.RegisterContestant(new Contestant());
-            //sweepstakes.RegisterContestant(new Contestant());
-            //sweepstakes.RegisterContestant(new Contestant());
-
-            //Contestant winner = sweepstakes.PickWinner();
-
-            //sweepstakes.PrintContestantInfo(winner);
-
             Simulation simulation = new Simulation();
             simulation.CreateMarketingFirmWithManager();
 
