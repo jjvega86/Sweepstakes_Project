@@ -22,13 +22,5 @@ namespace Sweepstakes
             
         }
 
-        public void GetContestantInformation()
-        {
-            FirstName = UserInterface.GetUserInputFor("Please enter your first name!");
-            LastName = UserInterface.GetUserInputFor("Please enter your last name!");
-            EmailAddress = UserInterface.GetUserInputFor("Please enter your email address!");           
-            RegistrationNumber = UserInterface.AssignRegistrationNumber();
-
-        }
     }
 }

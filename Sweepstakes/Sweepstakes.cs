@@ -23,8 +23,11 @@ namespace Sweepstakes
 
         public void RegisterContestant(Contestant contestant)
         {
+            contestant.FirstName = UserInterface.GetUserInputFor("Please enter your first name!");
+            contestant.LastName = UserInterface.GetUserInputFor("Please enter your last name!");
+            contestant.EmailAddress = UserInterface.GetUserInputFor("Please enter your email address!");
+            contestant.RegistrationNumber = UserInterface.AssignRegistrationNumber();
             int newKey = GenerateKey();
-            contestant.GetContestantInformation();
             contestants.Add(newKey, contestant);
         }
 
