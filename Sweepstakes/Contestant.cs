@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    public class Contestant : ISubscriber
+    public class Contestant
     {
         public string FirstName;
         public string LastName;
@@ -22,14 +22,6 @@ namespace Sweepstakes
             
         }
 
-        public void NotifyWinner()
-        {
-
-        }
-
-        public void NotifyNonWinners()
-        {
-
-        }
+        
     }
 }

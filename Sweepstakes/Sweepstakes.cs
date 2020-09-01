@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    public class Sweepstakes
+    public class Sweepstakes : ISubscriber
     {
         
         public string Name { get { return _name; } }
@@ -56,5 +56,14 @@ namespace Sweepstakes
             return _mostRecentKey;
         }
 
+        public void NotifyWinner()
+        {
+
+        }
+
+        public void NotifyNonWinners()
+        {
+
+        }
     }
 }
