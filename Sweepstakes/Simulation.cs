@@ -10,17 +10,23 @@ namespace Sweepstakes
     {
         public void CreateMarketingFirmWithManager()
         {
-            MarketingFirm marketingFirm = null;
             string input = UserInterface.GetUserInputFor("What type of manager would you like to use for your sweepstakes? Stack or Queue");
+            MarketingFirm marketingFirm = new MarketingFirm(SelectManagerType(input));
+            marketingFirm.CreateSweepStake();
+     
+        }
+
+        private ISweepStakesManager SelectManagerType(string input)
+        {
+            ISweepStakesManager manager = null;
             switch (input)
             {
-
                 case "Stack":
-                    marketingFirm = new MarketingFirm(new SweepStakesStackManager());
+                    manager = new SweepStakesStackManager();
                     break;
 
                 case "Queue":
-                    marketingFirm = new MarketingFirm(new SweepStakesQueueManager());
+                    manager = new SweepStakesQueueManager();
                     break;
 
                 default:
@@ -29,8 +35,8 @@ namespace Sweepstakes
                     break;
 
             }
+            return manager;
 
-            
         }
      
     }
